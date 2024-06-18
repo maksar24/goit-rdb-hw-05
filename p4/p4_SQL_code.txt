@@ -1,0 +1,6 @@
+with TemporalTable as (
+select * from order_details where order_details.quantity > 10
+)
+select order_id, avg(quantity) as avg_quantity
+from TemporalTable
+group by order_id;

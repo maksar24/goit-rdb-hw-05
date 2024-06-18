@@ -1,0 +1,19 @@
+drop function if exists DivideNumbers;
+
+delimiter //
+create function DivideNumbers (dividend float, divisor float) 
+returns float
+deterministic
+no sql
+begin
+	declare result float;
+    set result = dividend / divisor;
+    return result;
+end //
+delimiter ;
+
+select 
+id, 
+DivideNumbers(quantity, 2) as divided_values 
+from 
+order_details;

@@ -1,0 +1,5 @@
+select 
+*, 
+(select customer_id from orders o where o.id = o_d.order_id) as customer_id 
+from 
+order_details o_d;

@@ -1,0 +1,5 @@
+select * from order_details
+where 
+order_id 
+in 
+(select id from orders o where o.shipper_id = 3);
